@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --principal-color: 271;
+    --principal-color-hls: hsl(var(--principal-color), 100%, 50%);
+    --secondary-color: 300;
+    --secondary-color-hls: hsl(var(--secondary-color), 100%, 50%);
+    --index-top : 100;
+    --margin-left1: 20px;
+    --margin-top1: 200px
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Quicksand;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+.animation-side {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: rgb(255, 0, 0);
+    left: -15%;
+    top: 0;
+    transform: skew(-45deg);
+    transition: .2s;
+}
+/* 
+.animate-side:hover {
+    left: -15%;
+} */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.center-object {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* MARK -----------------NAVBAR----------------- */
+header {
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    list-style: none;
+}
+
+header ul li a{
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    gap: 5px;
+    background-color: transparent;
+    z-index: 10;
+}
+
+header ul li a span h4{
+    font-size: 20px;
+}
+
+
+header ul li a:hover {
+    color: #fff;
+}
+
+
+
+
+/* MARK -----------------HOME----------------- */
+#home {
+    min-height: auto;
+    background: linear-gradient(#000000bd, #00000094), url('src/Banner2.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .home-content {
+    width: 100%;
+    height: auto;
+    margin: 200px 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#home .dyw-logo {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#home .dyw-logo img {
+    width: 120%;
+    object-fit: cover;
+    position: absolute;
+
+}
+
+#home a {
+    background-color: hsl(var(--principal-color), 100%, 50%);
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    color: #fff
+}
+
+
+#team {
+    min-height: auto;
+    background: linear-gradient(hsla(var(--principal-color), 70%, 50%, .8), hsla(var(--principal-color), 100%, 50%, .2)), url('src/Banner-back.png') ;
+    background-position: center;
+    background-size: cover;
+    
+    position: relative;
+}
+
+.section-header {
+    height: 70px;
+    width: 100%;
+    background: linear-gradient(45deg, var(--principal-color-hls), var(--secondary-color-hls));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 40px;
+    box-shadow: 0px 10px 0 rgba(0, 0, 0, 0.274);
+}
+
+
+#team .cards-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    position: relative;
+    gap: 90px;
+    padding: 200px 0;
+}
+
+#team .cards-content .card {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    position: relative;
+    transition: .2s;
+}
+
+
+
+#team .cards-content .card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(hsla(var(--principal-color), 100%, 50%, .8), hsla(var(--principal-color), 100%, 50%, .2)), url('src/Banner-back.png') ;
+    top: 0;
+    left: 0;
+
+    border-radius: 20px 20px 0 0;
+}
+
+#team .cards-content .card:hover {
+    transform: scale(1.1);
+}
+
+
+#team .cards-content .card .card-image {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--principal-color-hls);
+}
+
+#team .cards-content .card .card-image img {
+    /* padding: 10px; */
+    border: 10px solid #fff;
+    border-radius: 50%;
+
+    width: 145px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#team .cards-content .card .card-profesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #999;
+    font-size: 15px;
+}
+
+#team .cards-content .card .social-net {
+    position: relative;
+}
+
+#team .cards-content .card .social-net ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#team .cards-content .card .social-net ul li a{
+    color: #999;
+    transition: .2s;
+}
+
+#team .cards-content .card .social-net ul li:hover a{
+    color: #f00;
+}
+
+
+#team .cards-content .card .card-about-toggle {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .1);
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: hsl(var(--principal-color), 100%, 50%);
+    cursor: pointer;
+    transition: .2s;
+}
+
+#team .cards-content .card .card-about-toggle:hover {
+    background-color: hsl(var(--principal-color), 100%, 50%);
+    color: #fff;
+    border: 2px solid #000;
+}
+
+#explore {
+    min-height: auto;
+    background-color: rgb(24, 24, 24);
+
+    position: relative;
+}
+
+#explore .section-header {
+    background: linear-gradient(45deg, #000, hsla(var(--principal-color), 100%, 50%, 1)) ;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#explore .explore-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 200px 0;
+}
+
+#explore .explore-content .world {
+    width: 300px;
+    height: 450px;
+    background-color: rgb(14, 14, 14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    transition: .2s;
+}
+
+#explore .explore-content .world:hover {
+    transform: scale(1.1);
+    border: 2px solid var(--principal-color-hls);
+    box-shadow: 10px 10px 10px hsla(var(--principal-color), 100%, 50%, .1);
+}
+
+#explore .explore-content .world h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: hsla(var(--principal-color), 100%, 50%);
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+#explore .explore-content .world h2::after{
+    content: '';
+    width: 10px;
+    height: 100%;
+    background-color: hsl(var(--principal-color), 100%, 50%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+#explore .explore-content .world p{
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(189, 189, 189);
+    padding: 0 10px;
+    margin-top: 10px;
+
+}
+
+#explore .explore-content .world-image {
+    background-color: red;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+
+}
+#explore .explore-content .world-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#explore .explore-content a {
+    position: absolute;
+    bottom: -20px;
+    background-color: hsl(var(--principal-color), 100%, 50%);
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 20px;
+    color: #fff;
+    transition: .2s
+}
+
+#explore .explore-content a:hover {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 10px 0 #000;
+}
+
+
+
+@media (max-width:600px) {
+    #home .dyw-logo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .section-header {
+        font-size: 20px;
+    }
+
+}
