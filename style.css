@@ -392,7 +392,6 @@ header ul li a:hover {
 }
 
 
-
 @media (max-width:600px) {
     #home .dyw-logo {
         width: 300px;
@@ -402,5 +401,9 @@ header ul li a:hover {
     .section-header {
         font-size: 20px;
     }
+    #explore .explore-content .world {
+        width: 100%;
+        margin: 40px 0;
+    } 
 
 }
