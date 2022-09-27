@@ -68,6 +68,54 @@ header ul {
     list-style: none;
 }
 
+header ul li div {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+}
+
+header ul li div:hover {
+    transform: scale(1.2);
+}
+
+header ul li div::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 20px;
+    height: 50%;
+    background-color: #000;
+    transform: rotate(45deg);
+    transition: .2s;
+}
+
+header ul li div:hover::after {
+    
+    top: -22%;
+    left: -10%;
+}
+
+header ul li div::before {
+    position: absolute;
+    content: '';
+    width: 150%;
+    height: 100%;
+    background-color: var(--principal-color-hls);
+    top: 0;
+    left: -180%;
+    transform: skew(-45deg);
+    transition: .3s;
+}
+header ul li div:hover:before {
+    left: -25%;
+}
+
+
+
 header ul li a{
     color: #000;
     font-size: 20px;
@@ -75,6 +123,12 @@ header ul li a{
     gap: 5px;
     background-color: transparent;
     z-index: 10;
+    
+    padding: 10px 20px;
+    transition: .2s;
+}
+header ul li a:hover {
+    color: #fff;
 }
 
 header ul li a span h4{
@@ -82,9 +136,6 @@ header ul li a span h4{
 }
 
 
-header ul li a:hover {
-    color: #fff;
-}
 
 
 
@@ -106,11 +157,21 @@ header ul li a:hover {
     height: auto;
     margin: 200px 0;
     display: flex;
-    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 200px;
 }
+
+#home .home-content .logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 
 #home .dyw-logo {
     width: 600px;
@@ -127,6 +188,57 @@ header ul li a:hover {
 
 }
 
+#home .home-content .hero {
+    width: auto;
+    height: auto;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#home .home-content .hero h1{
+    color: #fff;
+    font-size: 100px; 
+    background-color: rgba(0, 0, 0, 0.26);
+    padding: 25px;
+    position: relative;
+    border-top: 1px solid var(--principal-color-hls);
+
+}
+
+#home .home-content .hero h1::after{
+    content: '';
+    width: 20px ;
+    height: 100%;
+    background-color: var(--principal-color-hls);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#home .home-content .hero h3{
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding: 25px;
+    position: relative;
+    border-top: 1px solid var(--principal-color-hls);
+    color: hsl(var(--principal-color), 100%, 80%);
+
+}
+
+#home .home-content .hero h3::after{
+    content: '';
+    width: 20px ;
+    height: 100%;
+    background-color: var(--principal-color-hls);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #home a {
     background-color: hsl(var(--principal-color), 100%, 50%);
     width: 200px;
@@ -136,9 +248,21 @@ header ul li a:hover {
     align-items: center;
     position: relative;
     border-radius: 20px;
-    color: #fff
+    color: #fff;
+    transition: .2s;
+    gap: 20px;
 }
 
+#home a .icon {
+    font-size: 20px;
+}
+
+
+#home a:hover {
+    color: hsl(var(--principal-color), 100%, 50%);
+    background-color: #fff; 
+    letter-spacing: 2px;  
+}
 
 #team {
     min-height: auto;
@@ -392,6 +516,14 @@ header ul li a:hover {
 }
 
 
+
+@media (max-width:1200px) {
+    #home .home-content .hero h1{
+        font-size: 50px;
+    }
+}
+
+
 @media (max-width:600px) {
     #home .dyw-logo {
         width: 300px;
@@ -404,5 +536,24 @@ header ul li a:hover {
     #explore .explore-content .world {
         width: 100%;
     } 
+
+    header ul {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:400px) {
+    header ul li div span {
+        font-size: 10px;
+    }
+
+    header ul li div span h4{
+        font-size: 10px;
+    }
+
+    header ul li div::after{
+        display: none;
+    }
 
 }
