@@ -615,6 +615,7 @@ header ul li a span h4{
 .modal-activate,.modal-deactivate {
     display: flex;
     background-color: #00000083;
+    backdrop-filter: blur(5px);
 }
 
 .about-modal .box-size {
@@ -628,10 +629,13 @@ header ul li a span h4{
 }
 
 .about-modal .content {
-    background-color: #fff;
     transition: 1s;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0), #fff), url('src/undraw_programming_re_kg9v.svg');
+    background-position: center;
+    background-size: cover;
+    background-color: #fff;
 }
 
 .about-modal.modal-activate .content {
@@ -692,7 +696,6 @@ header ul li a span h4{
 .about-modal .content .skills-content {
     width: 100%;
     height: 400px;
-    background-color: transparent;
     position: absolute;
     top: 100px;
     margin-top: 10px;
@@ -703,24 +706,24 @@ header ul li a span h4{
 }
 
 .about-modal .content .skills-content .skill {
-    background-color: #eee;
+    /* background-color: #ff; */
     padding: 40px 30px;
     transition: .2s;
 }
 
 
 .about-modal .content .skills-content .skill:hover {
-    background-color: hsl(var(--principal-color), 100%, 90%);
+    background-color: hsla(var(--principal-color), 100%, 50%, .2);
 }
 .about-modal .content .skills-content .skill .skill-bar {
     width: 100%;
     height: 10px;
-    background-color: #00000012;
+    background-color: #000000cc;
     margin-top: 10px;
     position: relative;
 }
 .about-modal .content .skills-content .skill .skill-bar .fill-bar{
-    background-color: var(--principal-color-hls);
+    background-color: hsl(var(--principal-color), 100%, 65%);
     content: '';
     width: 50%;
     height: 10px;
@@ -731,6 +734,13 @@ header ul li a span h4{
 .about-modal .content .skills-content .skill .skill-info {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.about-modal .content .skills-content .skill .skill-info .left-text {
+    display: flex;
     gap: 10px;
 }
 
