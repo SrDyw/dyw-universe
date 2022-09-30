@@ -407,8 +407,7 @@ header ul li a span h4{
     background-color: hsl(var(--principal-color), 100%, 50%);
     color: #fff;
     border: 2px solid #000;
-}
-
+} 
 #explore {
     min-height: auto;
     background-color: rgb(24, 24, 24);
@@ -599,6 +598,177 @@ header ul li a span h4{
 }
 
 
+/* MARK --------MODAL CLASS---------- */
+.about-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.modal-activate,.modal-deactivate {
+    display: flex;
+    background-color: #00000083;
+}
+
+.about-modal .box-size {
+    position: relative;
+    width: 80vw;
+    height: 90vh;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-modal .content {
+    background-color: #fff;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-modal.modal-activate .content {
+    animation: appear .7s ease-out forwards;
+
+}
+
+.about-modal.modal-deactivate .content {
+    animation: dissapear .5s ease-out forwards;
+
+}
+
+.about-modal .content .head {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #fff;
+    border-bottom: 1px solid #00000083;
+}
+
+.about-modal .content .head .modal-close {
+    width: 100px;
+    height: auto;
+    background-color: #ddd;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.about-modal .content .head .modal-close:hover {
+    background-color: var(--principal-color-hls);
+    color: #fff;
+}
+.about-modal .content .head .modal-user-image {
+    width: 100px;
+    background-color: transparent;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.about-modal .content .head .modal-user-image img{
+    width: 100%;
+    object-fit: cover;;
+
+}
+
+.about-modal .content .skills-content {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    position: absolute;
+    top: 100px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-modal .content .skills-content .skill {
+    background-color: #eee;
+    padding: 40px 30px;
+    transition: .2s;
+}
+
+
+.about-modal .content .skills-content .skill:hover {
+    background-color: hsl(var(--principal-color), 100%, 90%);
+}
+.about-modal .content .skills-content .skill .skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #00000012;
+    margin-top: 10px;
+    position: relative;
+}
+.about-modal .content .skills-content .skill .skill-bar .fill-bar{
+    background-color: var(--principal-color-hls);
+    content: '';
+    width: 50%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+}
+
+.about-modal .content .skills-content .skill .skill-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-modal .content .skills-content .skill .skill-svg, .skill-name{
+    font-size: 20px;
+}
+
+
+
+@keyframes appear {
+    0% {
+        width: 0;
+        height: 100px;
+    }
+    50% {
+        width: 100%;
+        height: 100px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes dissapear {
+    0% {
+        width: 80vw;
+        height: 90vh;
+    }
+    50% {
+        width: 80vw;
+        height: 100px;
+    }
+    100% {
+        width: 200px;
+        height: 100px;
+    }
+}
 footer {
     position: relative;
     width: 100%;
@@ -611,7 +781,6 @@ footer {
     #home .home-content .hero h1{
         font-size: 50px;
     }
-
 }
 
 
@@ -636,6 +805,55 @@ footer {
         display: none;
     }
 
+    .about-modal .box-size {
+        width: 100vw;
+    }
+    .about-modal .content .head {
+        height: 50px;
+    }
+    .about-modal .content .head .modal-user-image {
+        width: 50px;
+        height: 50px;
+    }
+    .about-modal .content .head .modal-close {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-modal .content .skills-content {
+        top: 50px;
+    }
+
+    @keyframes appear {
+        0% {
+            width: 0;
+            height: 50px;
+        }
+        50% {
+            width: 100%;
+            height: 50px;
+        }
+        100% {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    @keyframes dissapear {
+        0% {
+            width: 80vw;
+            height: 90vh;
+        }
+        50% {
+            width: 80vw;
+            height: 50px;
+        }
+        100% {
+            width: 100px;
+            height: 50px;
+        }
+    }
+
 }
 
 @media (max-width:400px) {
@@ -651,4 +869,10 @@ footer {
         display: none;
     }
 
+}
+
+@media (max-height:800px) {
+    .about-modal.modal-activate .content {
+        max-height: 90vh;
+    }
 }
