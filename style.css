@@ -53,7 +53,7 @@ header {
     position: fixed;
     top: 0;
     height: 70px;
-    width: 100%;
+    width: 100vw;
     background: #fff;
     display: flex;
     justify-content: center;
@@ -219,7 +219,7 @@ header ul li a span h4{
     left: 0;
 }
 
-#home .home-content .hero h3{
+#home .home-content .hero p{
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.185);
     padding: 25px;
@@ -229,7 +229,7 @@ header ul li a span h4{
 
 }
 
-#home .home-content .hero h3::after{
+#home .home-content .hero p::after{
     content: '';
     width: 20px ;
     height: 100%;
@@ -408,6 +408,15 @@ header ul li a span h4{
     color: #fff;
     border: 2px solid #000;
 } 
+
+#team .cards-content .card .leader-symb {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 20px;
+    color: rgb(255, 166, 0);
+}
+
 #explore {
     min-height: auto;
     background-color: rgb(24, 24, 24);
@@ -499,6 +508,7 @@ header ul li a span h4{
 }
 #explore .explore-content .world-image img {
     width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -597,6 +607,9 @@ header ul li a span h4{
     color: #fff;
 }
 
+#explore .explore-content .world .more-info .platform {
+    font-size: 15px;
+}
 
 /* MARK --------MODAL CLASS---------- */
 .about-modal {
@@ -615,7 +628,6 @@ header ul li a span h4{
 .modal-activate,.modal-deactivate {
     display: flex;
     background-color: #00000083;
-    backdrop-filter: blur(5px);
 }
 
 .about-modal .box-size {
@@ -634,8 +646,10 @@ header ul li a span h4{
     overflow: hidden;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0), #fff), url('src/undraw_programming_re_kg9v.svg');
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
     background-color: #fff;
+    box-shadow: 10px 10px 20px #00000043;
 }
 
 .about-modal.modal-activate .content {
@@ -673,18 +687,40 @@ header ul li a span h4{
     color: #000;
     font-size: 30px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .about-modal .content .head .modal-close:hover {
     background-color: var(--principal-color-hls);
     color: #fff;
 }
+
+.about-modal .content .head .modal-user-name {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 300px;
+    text-align: end;
+    opacity: 1;
+
+    transition: .2s;
+}
+
+.about-modal.modal-deactivate .content .head .modal-user-name {
+    opacity: 0;
+}
 .about-modal .content .head .modal-user-image {
-    width: 100px;
+    width: 70px;
+    height: 70px;
     background-color: transparent;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
 }
 
 .about-modal .content .head .modal-user-image img{
@@ -703,6 +739,11 @@ header ul li a span h4{
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+
 }
 
 .about-modal .content .skills-content .skill {
@@ -713,7 +754,9 @@ header ul li a span h4{
 
 
 .about-modal .content .skills-content .skill:hover {
-    background-color: hsla(var(--principal-color), 100%, 50%, .2);
+    background-color: hsla(var(--principal-color), 100%, 0%, .2);
+    /* backdrop-filter: blur(10px); */
+    box-shadow: 10px 10px 20px #00000003;
 }
 .about-modal .content .skills-content .skill .skill-bar {
     width: 100%;
@@ -723,9 +766,9 @@ header ul li a span h4{
     position: relative;
 }
 .about-modal .content .skills-content .skill .skill-bar .fill-bar{
-    background-color: hsl(var(--principal-color), 100%, 65%);
+    background-color: hsl(var(--principal-color), 100%, 50%);
     content: '';
-    width: 50%;
+    width: 20%;
     height: 10px;
     position: absolute;
     left: 0;
@@ -866,7 +909,7 @@ footer {
 
 }
 
-@media (max-width:400px) {
+@media (max-width:600px) {
     header ul li div span {
         font-size: 10px;
     }
@@ -878,6 +921,17 @@ footer {
     header ul li div::after{
         display: none;
     }
+    .about-modal .content .head .modal-user-name {
+        font-size: 15px;
+        width: auto;
+        height: 15px;
+        overflow: hidden;
+    }
+    .about-modal .content .skills-content {
+        overflow-y: scroll;
+        height: 500px;
+    }
+
 
 }
 
