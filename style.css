@@ -784,13 +784,27 @@ header ul li a span h4{
 
 .about-modal .content .skills-content .skill .skill-info .left-text {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .about-modal .content .skills-content .skill .skill-svg, .skill-name{
     font-size: 20px;
 }
 
+.about-modal .content .skills-content .skill .skill-svg {
+    position: relative;
+    margin-left: 12px;
+    color: hsl(var(--principal-color), 100%, 70%);
+}
+.about-modal .content .skills-content .skill .skill-svg::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: hsl(var(--principal-color), 100%, 20%);
+    transform: translate(-15px, -15px);
+    border-radius: 10px;
+}
 
 
 @keyframes appear {
