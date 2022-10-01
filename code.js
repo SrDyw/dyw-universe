@@ -35,7 +35,7 @@ let skills = [
 let userprofile = [
     "src/user-image-export.webp",
     "src/ultra.webp",
-    "src/eriel.webp"
+    "src/eriel.webp "
 ]
 
 let members = {
